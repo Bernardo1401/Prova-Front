@@ -3,6 +3,7 @@ import React from 'react';
 import { Spin } from 'antd';
 import Buttom from '../../components/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
     return (
@@ -11,7 +12,7 @@ export default function Home() {
             <h1 className={styles.title}>Seja bem vindo(A)</h1>
             <div className={styles.card}>
                 <Image className={styles.img}
-                    src="/image/bernardo.png"
+                    src="/images/bernardo.png"
                     alt="Eu"
                     width={150}
                     height={50}
@@ -27,7 +28,9 @@ export default function Home() {
                 </div>
             </div>
             <div className={styles.button}>
-                <Buttom />
+            <Link href="/clientes" className={styles.link}>
+                <Buttom title="ir para API"/>
+                </Link>
             </div>
             <div className={styles.loading}>
             </div>

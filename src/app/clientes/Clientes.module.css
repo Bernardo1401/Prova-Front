@@ -6,10 +6,28 @@
     margin-top: 20px;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+}
+
 .card {
     width: 220px;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.link {
+    text-decoration: none;
+    color: inherit;
 }

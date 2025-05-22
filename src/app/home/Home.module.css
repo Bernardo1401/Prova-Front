@@ -51,3 +51,9 @@
     width: 100%;
     word-spacing: 5px;
 }
+
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
