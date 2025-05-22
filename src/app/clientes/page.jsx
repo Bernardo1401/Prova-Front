@@ -47,22 +47,24 @@ export default function Clientes() {
       fetchClientes();
     }, []);
 
-const openModal = async (cliente) => {
-  setModalInfo({ visible: true, cliente, reserva: null, loading: true });
-
-  try {
-    const { data: reserva } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/reservas/${cliente.id}`,
-      {
-        headers: HEADERS,
-      }
-    );
-    setModalInfo((m) => ({ ...m, reserva, loading: false }));
-  } catch {
-    toast.error("Erro ao carregar reserva.");
-    setModalInfo((m) => ({ ...m, loading: false }));
-  }
-};
+    const openModal = async (cliente) => {
+      setModalInfo({ visible: true, cliente, reserva: null, loading: true });
+    
+      try {
+        const { data: reserva } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/reservas/${cliente.id}`,
+          {
+            headers: HEADERS,
+          }
+        );
+        console.log("Reserva recebida:", reserva); 
+        setModalInfo((m) => ({ ...m, reserva, loading: false }));
+      } catch (error) {
+        console.error("Erro ao carregar reserva:", error); 
+        toast.error("Erro ao carregar reserva.");
+        setModalInfo((m) => ({ ...m, loading: false }));
+      };
+    }
 
 const paginatedClientes = () => {
   const start = (data.current - 1) * data.pageSize;
@@ -157,4 +159,4 @@ return (
     <ToastContainer position="top-right" autoClose={4500} />
   </div>
 );
-}
+};
