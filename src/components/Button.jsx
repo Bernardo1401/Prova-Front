@@ -1,11 +1,14 @@
 import React from 'react';
-import { Button, Flex } from 'antd';
 import Link from 'next/link';
+import StyleSheet from '../styles/Button.module.css';
 
-const Buttom = () => (
-  <Flex gap="small" wrap>
-    <Button href="/reservas" type="primary"color="default" variant="solid">Ir Para API</Button>
-  </Flex>
-);
-export default Buttom;
+export default function Buttom() {
+    return (
+        <div>
+            <Link href="/clientes" className={StyleSheet.link}>
+                <button className={StyleSheet.button}>Ir para API gerenciada via axios</button>
+            </Link>
+        </div>
+    );
+}
 
